@@ -4,6 +4,8 @@ A powerful CLI tool that uses AI to review your code, suggest improvements, and 
 
 > 📚 **See [PRODUCTS.md](./PRODUCTS.md) for a complete catalog of all AI developer tools with detailed descriptions and UX/UI mockups.**
 
+> 🎨 **View interactive HTML mockups in the [mockups/](./mockups/) directory. Open `mockups/index.html` in your browser to see all visual designs.**
+
 ## Features
 
 - 🤖 **AI-Powered Reviews**: Uses GPT-4 to analyze your code for bugs, security issues, and improvements
