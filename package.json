@@ -1,0 +1,40 @@
+{
+  "name": "ai-code-review",
+  "version": "1.0.0",
+  "description": "AI-powered CLI tool for code review that suggests improvements and catches bugs",
+  "main": "dist/index.js",
+  "bin": {
+    "ai-review": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "code-review",
+    "ai",
+    "cli",
+    "code-quality",
+    "developer-tools"
+  ],
+  "author": "Yoshi Kondo",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "openai": "^4.20.0",
+    "dotenv": "^16.3.1",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
