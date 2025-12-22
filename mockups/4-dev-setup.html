@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Environment Setup Tool - CLI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .title {
+            color: #f0883e;
+            font-size: 20px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #f0883e; }
+        .output { color: #d4d4d4; }
+        .detected { color: #79c0ff; }
+        .check { color: #3fb950; }
+        .config-item { 
+            background: #161b22; 
+            padding: 8px 12px; 
+            border-radius: 4px;
+            margin: 4px 0;
+            border-left: 3px solid #30363d;
+        }
+        .success { color: #3fb950; }
+        .separator { color: #30363d; margin: 16px 0; }
+        .icon { font-size: 18px; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="title">🚀 Development Environment Setup</div>
+        <br>
+        <div class="output">Analyzing project structure...</div>
+        <br>
+        <div class="separator">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="output">
+            <span class="icon">📦</span> Detected Stack:
+        </div>
+        <div class="config-item">
+            <span class="check">✓</span> Node.js 18.x
+        </div>
+        <div class="config-item">
+            <span class="check">✓</span> TypeScript
+        </div>
+        <div class="config-item">
+            <span class="check">✓</span> PostgreSQL database
+        </div>
+        <div class="config-item">
+            <span class="check">✓</span> Redis cache
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">⚙️</span> Configuration Plan:
+        </div>
+        <div class="config-item">
+            • Create .env file with database credentials
+        </div>
+        <div class="config-item">
+            • Set up Docker Compose for PostgreSQL & Redis
+        </div>
+        <div class="config-item">
+            • Configure TypeScript paths
+        </div>
+        <div class="config-item">
+            • Install development dependencies
+        </div>
+        <div class="config-item">
+            • Create database migration scripts
+        </div>
+        <br>
+        <div class="separator">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="output">Proceed with setup? [Y/n] <span class="detected">Y</span></div>
+        <br>
+        <div class="output">
+            <span class="check">✓</span> Creating .env file...<br>
+            <span class="check">✓</span> Generating docker-compose.yml...<br>
+            <span class="check">✓</span> Installing dependencies...<br>
+            <span class="check">✓</span> Setting up database...<br>
+        </div>
+        <br>
+        <div class="output success">
+            <span class="icon">✅</span> Setup complete!
+        </div>
+        <br>
+        <div class="output">
+            Next steps:<br>
+            &nbsp;&nbsp;1. Review .env file and update credentials<br>
+            &nbsp;&nbsp;2. Run: <span class="command">docker-compose up -d</span><br>
+            &nbsp;&nbsp;3. Run: <span class="command">npm run dev</span>
+        </div>
+    </div>
+</body>
+</html>
+

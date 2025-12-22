@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation Generator - UI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #24292f;
+            padding: 0;
+        }
+        .header {
+            background: #f6f8fa;
+            border-bottom: 1px solid #d0d7de;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 20px; font-weight: 600; }
+        .search-box {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 8px 12px;
+            width: 300px;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+        .endpoint {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .method {
+            display: inline-block;
+            background: #0969da;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .path {
+            font-size: 20px;
+            font-weight: 600;
+            color: #24292f;
+            margin: 8px 0;
+        }
+        .description {
+            color: #57606a;
+            margin: 16px 0;
+            line-height: 1.6;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: #24292f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #d0d7de;
+        }
+        th {
+            background: #f6f8fa;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .code-block {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+        .tab {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            margin-right: 4px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+        }
+        .warning {
+            background: #fff8c5;
+            border: 1px solid #d4a72c;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 16px 0;
+            color: #953800;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">📚 API Documentation</div>
+        <input type="text" class="search-box" placeholder="Search endpoints...">
+        <button style="padding: 8px 16px; background: #0969da; color: white; border: none; border-radius: 6px; cursor: pointer;">Dark Mode</button>
+    </div>
+    <div class="container">
+        <div class="endpoint">
+            <div>
+                <span class="method">GET</span>
+                <span class="path">/api/users</span>
+            </div>
+            <div class="description">
+                Retrieve a list of all users. This endpoint returns a paginated list of users in the system. Supports filtering by role, status, and date range.
+            </div>
+            
+            <div class="section-title">📋 Parameters</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>page</td>
+                        <td>integer</td>
+                        <td>No</td>
+                        <td>Page number (1+)</td>
+                    </tr>
+                    <tr>
+                        <td>limit</td>
+                        <td>integer</td>
+                        <td>No</td>
+                        <td>Items per page</td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>string</td>
+                        <td>No</td>
+                        <td>Filter by role</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="section-title">💻 Code Examples</div>
+            <div>
+                <span class="tab active">JavaScript</span>
+                <span class="tab">Python</span>
+                <span class="tab">cURL</span>
+            </div>
+            <div class="code-block">
+fetch('/api/users?page=1&limit=10')
+  .then(res => res.json())
+  .then(data => console.log(data));
+            </div>
+            
+            <div class="section-title">📥 Response</div>
+            <div class="code-block">
+{
+  "data": [
+    { "id": 1, "name": "John Doe", "email": "john@example.com" }
+  ],
+  "pagination": { "page": 1, "total": 100 }
+}
+            </div>
+            
+            <div class="warning">
+                ⚠️ <strong>Note:</strong> Rate limited to 100 requests/minute
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

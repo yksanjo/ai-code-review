@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebase Question Answerer - CLI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #f0883e; }
+        .output { color: #d4d4d4; }
+        .question { color: #79c0ff; }
+        .answer { color: #d4d4d4; }
+        .file-link { color: #58a6ff; text-decoration: underline; }
+        .line-ref { color: #8b949e; }
+        .section { 
+            background: #161b22; 
+            padding: 16px; 
+            border-radius: 6px; 
+            margin: 12px 0;
+            border-left: 3px solid #30363d;
+        }
+        .icon { font-size: 18px; margin-right: 8px; }
+        .input-line {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+        }
+        .cursor { 
+            background: #58a6ff; 
+            width: 8px; 
+            height: 16px; 
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="output">
+            <span class="prompt">$</span> <span class="command">ask-codebase</span>
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">💬</span> Ask questions about your codebase<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Type 'exit' to quit
+        </div>
+        <br>
+        <div class="separator" style="color: #30363d; margin: 16px 0;">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="input-line">
+            <span class="prompt">></span> <span class="question">How does user authentication work?</span>
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">🔍</span> Analyzing codebase...
+        </div>
+        <br>
+        <div class="section">
+            <div class="output" style="color: #79c0ff; font-weight: bold; margin-bottom: 12px;">
+                <span class="icon">📋</span> Authentication Flow:
+            </div>
+            <div class="output" style="margin: 8px 0;">
+                1. User login endpoint:<br>
+                &nbsp;&nbsp;&nbsp;<span class="file-link">📄 src/routes/auth.ts</span> <span class="line-ref">(lines 15-45)</span><br>
+                &nbsp;&nbsp;&nbsp;- Validates credentials against database<br>
+                &nbsp;&nbsp;&nbsp;- Generates JWT token
+            </div>
+            <div class="output" style="margin: 8px 0;">
+                2. Token verification middleware:<br>
+                &nbsp;&nbsp;&nbsp;<span class="file-link">📄 src/middleware/auth.ts</span> <span class="line-ref">(lines 8-30)</span><br>
+                &nbsp;&nbsp;&nbsp;- Validates JWT on protected routes<br>
+                &nbsp;&nbsp;&nbsp;- Extracts user info from token
+            </div>
+            <div class="output" style="margin: 8px 0;">
+                3. User model:<br>
+                &nbsp;&nbsp;&nbsp;<span class="file-link">📄 src/models/User.ts</span> <span class="line-ref">(lines 1-50)</span><br>
+                &nbsp;&nbsp;&nbsp;- Stores user credentials (hashed passwords)<br>
+                &nbsp;&nbsp;&nbsp;- Manages user sessions
+            </div>
+            <br>
+            <div class="output" style="color: #8b949e;">
+                Related files:<br>
+                &nbsp;&nbsp;• <span class="file-link">src/config/jwt.ts</span> - JWT configuration<br>
+                &nbsp;&nbsp;• <span class="file-link">src/utils/password.ts</span> - Password hashing
+            </div>
+        </div>
+        <br>
+        <div class="input-line">
+            <span class="prompt">></span> <span class="question">Where is the payment processing logic?</span><span class="cursor"></span>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Generator - CLI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #f0883e; }
+        .output { color: #d4d4d4; }
+        .check { color: #3fb950; }
+        .function-name { color: #79c0ff; font-weight: bold; }
+        .test-item { 
+            background: #161b22; 
+            padding: 8px 12px; 
+            border-radius: 4px;
+            margin: 4px 0;
+            border-left: 3px solid #30363d;
+        }
+        .coverage-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .success { color: #3fb950; }
+        .warning { color: #d29922; }
+        .separator { color: #30363d; margin: 16px 0; }
+        .icon { font-size: 18px; margin-right: 8px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #30363d;
+        }
+        th {
+            color: #8b949e;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="output">
+            <span class="prompt">$</span> <span class="command">test-gen src/utils.ts</span>
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">🔍</span> Analyzing code...<br>
+            &nbsp;&nbsp;&nbsp;<span class="check">✓</span> Found 5 functions<br>
+            &nbsp;&nbsp;&nbsp;<span class="check">✓</span> Detected 3 edge cases<br>
+            &nbsp;&nbsp;&nbsp;<span class="check">✓</span> Identified dependencies
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">📝</span> Generating test cases...
+        </div>
+        <br>
+        <div class="coverage-box">
+            <div class="output">
+                <span class="function-name">Function: calculateTotal(items, tax)</span>
+            </div>
+            <br>
+            <div class="output">Generated Tests:</div>
+            <div class="test-item">
+                <span class="check">✓</span> Normal case: valid items and tax
+            </div>
+            <div class="test-item">
+                <span class="check">✓</span> Edge case: empty items array
+            </div>
+            <div class="test-item">
+                <span class="check">✓</span> Edge case: negative tax
+            </div>
+            <div class="test-item">
+                <span class="check">✓</span> Edge case: null/undefined items
+            </div>
+            <div class="test-item">
+                <span class="check">✓</span> Edge case: very large numbers
+            </div>
+            <br>
+            <div class="output" style="color: #8b949e;">
+                Test File: <span class="function-name">src/utils.test.ts</span>
+            </div>
+        </div>
+        <br>
+        <div class="output success">
+            <span class="icon">✅</span> Generated 15 test cases
+        </div>
+        <br>
+        <div class="output">Coverage:</div>
+        <div class="test-item">
+            • Unit tests: 12 cases
+        </div>
+        <div class="test-item">
+            • Edge cases: 3 cases
+        </div>
+        <div class="test-item">
+            • Expected coverage: 95%
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">📄</span> Test file created: <span class="function-name">src/utils.test.ts</span>
+        </div>
+        <br>
+        <div class="output">Run tests: <span class="command">npm test</span></div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Message Translator - Browser Extension Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+        }
+        .console {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .error {
+            color: #f85149;
+            margin: 16px 0;
+            font-family: 'Monaco', monospace;
+            font-size: 14px;
+        }
+        .explanation-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .title {
+            color: #79c0ff;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .fix-section {
+            background: #0d4430;
+            border: 1px solid #238636;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .fix-title {
+            color: #3fb950;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .code-example {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Monaco', monospace;
+            font-size: 13px;
+            margin: 8px 0;
+            overflow-x: auto;
+        }
+        .location {
+            color: #8b949e;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        .buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            background: #21262d;
+            color: #c9d1d9;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .btn:hover {
+            background: #30363d;
+        }
+        .related {
+            color: #8b949e;
+            font-size: 13px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="console">
+        <div class="error">
+            ❌ TypeError: Cannot read property 'map' of undefined
+        </div>
+        
+        <div class="explanation-box">
+            <div class="title">💡 What went wrong?</div>
+            <div style="line-height: 1.6; margin-top: 8px;">
+                You're trying to call .map() on something that is undefined. This usually happens when:<br>
+                • An API call hasn't returned data yet<br>
+                • A variable wasn't initialized<br>
+                • An object property doesn't exist
+            </div>
+        </div>
+        
+        <div class="fix-section">
+            <div class="fix-title">🔧 How to fix:</div>
+            <div style="margin-top: 12px;">
+                <div style="margin-bottom: 12px;">
+                    <strong>1. Check if the value exists before mapping:</strong>
+                    <div class="code-example">
+const items = data?.items || [];<br>
+items.map(...)
+                    </div>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <strong>2. Add a default value:</strong>
+                    <div class="code-example">
+(data.items || []).map(...)
+                    </div>
+                </div>
+                <div>
+                    <strong>3. Use optional chaining:</strong>
+                    <div class="code-example">
+data?.items?.map(...)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="location">
+            📍 Location: src/components/UserList.tsx:45
+        </div>
+        
+        <div class="buttons">
+            <button class="btn">Show original error</button>
+            <button class="btn">Copy fix</button>
+            <button class="btn">Learn more</button>
+        </div>
+        
+        <div class="related">
+            📚 Related: Array methods, Optional chaining
+        </div>
+    </div>
+</body>
+</html>
+

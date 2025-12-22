@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Git Commit Generator - CLI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #f0883e; }
+        .output { color: #d4d4d4; }
+        .highlight { background: #161b22; padding: 16px; border-radius: 6px; border: 1px solid #30363d; margin: 16px 0; }
+        .commit-message { color: #79c0ff; font-weight: bold; }
+        .stats { color: #8b949e; }
+        .option { color: #58a6ff; }
+        .success { color: #3fb950; }
+        .separator { color: #30363d; margin: 16px 0; }
+        .icon { font-size: 18px; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="output">
+            <span class="prompt">$</span> <span class="command">git add .</span>
+        </div>
+        <div class="output">
+            <span class="prompt">$</span> <span class="command">smart-commit</span>
+        </div>
+        <br>
+        <div class="output">
+            <span class="icon">📊</span> Analyzing changes...
+        </div>
+        <br>
+        <div class="output stats">
+            Detected changes:<br>
+            &nbsp;&nbsp;• 3 files modified<br>
+            &nbsp;&nbsp;• 2 files added<br>
+            &nbsp;&nbsp;• 45 lines added, 12 lines removed
+        </div>
+        <br>
+        <div class="separator">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="output">
+            <span class="icon">💡</span> Suggested commit message:
+        </div>
+        <br>
+        <div class="highlight">
+            <div class="commit-message">feat(auth): add JWT token refresh mechanism</div>
+            <br>
+            <div style="color: #8b949e;">
+            - Implement refresh token endpoint<br>
+            - Add token expiration validation<br>
+            - Update authentication middleware<br>
+            <br>
+            Closes #123
+            </div>
+        </div>
+        <br>
+        <div class="output">
+            Options:<br>
+            &nbsp;&nbsp;<span class="option">[1]</span> Use this message<br>
+            &nbsp;&nbsp;<span class="option">[2]</span> Edit message<br>
+            &nbsp;&nbsp;<span class="option">[3]</span> Generate alternative<br>
+            &nbsp;&nbsp;<span class="option">[4]</span> Cancel<br>
+            <br>
+            Your choice: <span class="option">[1]</span>
+        </div>
+        <br>
+        <div class="output success">
+            <span class="icon">✅</span> Commit created successfully!
+        </div>
+    </div>
+</body>
+</html>
+

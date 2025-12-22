@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review Assistant - CLI Mockup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .prompt { color: #58a6ff; }
+        .command { color: #f0883e; }
+        .output { color: #d4d4d4; }
+        .file { color: #79c0ff; font-weight: bold; text-decoration: underline; }
+        .summary { color: #79c0ff; }
+        .error { color: #f85149; }
+        .warning { color: #d29922; }
+        .suggestion { color: #58a6ff; }
+        .success { color: #3fb950; }
+        .gray { color: #8b949e; }
+        .line-number { color: #6e7681; }
+        .code-snippet { 
+            background: #161b22; 
+            padding: 8px 12px; 
+            border-radius: 4px;
+            margin: 4px 0;
+            border-left: 3px solid #30363d;
+        }
+        .separator {
+            color: #30363d;
+            margin: 16px 0;
+        }
+        h1 {
+            color: #f0883e;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        .icon { font-size: 20px; margin-right: 8px; }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="output">
+            <span class="prompt">$</span> <span class="command">ai-review src/utils.ts</span>
+        </div>
+        <br>
+        <div class="output gray">Reviewing 1 file(s)...</div>
+        <br>
+        <div class="separator">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="output">
+            <h1><span class="icon">📄</span> <span class="file">src/utils.ts</span></h1>
+        </div>
+        <br>
+        <div class="output">
+            <span class="summary">Summary:</span> Code is generally well-structured but has a few potential issues that should be addressed.
+        </div>
+        <br>
+        <div class="output">
+            <span class="error icon">❌</span> <span class="error">[ERROR]</span> Potential null pointer exception<br>
+            <span class="line-number">   Line 15:</span> <span class="code-snippet">const result = data.value.toString();</span><br>
+            <span class="success">   💡 Suggestion:</span> Add null check: <span class="code-snippet">const result = data?.value?.toString() || '';</span>
+        </div>
+        <br>
+        <div class="output">
+            <span class="warning icon">⚠️</span> <span class="warning">[WARNING]</span> Function is too long (50+ lines)<br>
+            <span class="line-number">   Line 1:</span> <span class="code-snippet">function processData() {</span><br>
+            <span class="success">   💡 Suggestion:</span> Consider breaking into smaller functions
+        </div>
+        <br>
+        <div class="output">
+            <span class="suggestion icon">💡</span> <span class="suggestion">[SUGGESTION]</span> Missing JSDoc comment<br>
+            <span class="line-number">   Line 1:</span> <span class="code-snippet">export function processData() {</span><br>
+            <span class="success">   💡 Suggestion:</span> Add function documentation
+        </div>
+        <br>
+        <div class="separator">────────────────────────────────────────────────────────────</div>
+        <br>
+        <div class="output success">✅ Review complete!</div>
+    </div>
+</body>
+</html>
+
